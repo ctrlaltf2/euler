@@ -14,7 +14,7 @@ bool isPal(int num) {
 	a = 0;
 	std::string testCase = std::to_string(num);
 	if(d % 2 == 1) { //odd
-		int mid = floor(d/2);
+		int mid = ceil(d/2) + 2;
 		for(;a != mid;a++) {
 			if(a == mid)
 				return true;

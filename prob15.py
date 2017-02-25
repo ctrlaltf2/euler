@@ -1,4 +1,4 @@
-#Ported from c++ version that broke after 11 as grid size (probably some shitty overflow error that I can't find)
+# Only reason I'm using python is 3's ability to do calculations of large numbers such as (40!)
 from math import factorial
 
 gridsize = int(input("Enter a grid size: "))

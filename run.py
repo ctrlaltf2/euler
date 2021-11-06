@@ -19,7 +19,7 @@ def run_problem(problem_num):
     rel_filepath = os.path.join(folder, f'p{problem_num:04}.cpp')
     abs_binpath  = os.path.join('/tmp', f'p{problem_num:04}')
 
-    compile_command = ["g++", "-O3", "-march=native", "-mtune=native", rel_filepath, "-o", abs_binpath]
+    compile_command = ["g++", "-std=c++17", "-O3", "-march=native", "-mtune=native", rel_filepath, "-o", abs_binpath]
     run_command = [abs_binpath]
 
     subprocess.run(compile_command)

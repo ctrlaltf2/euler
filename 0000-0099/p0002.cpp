@@ -1,22 +1,17 @@
 #include <iostream>
 
-typedef long long unsigned int uint64;
+constexpr std::uint64_t limit{4'000'000};
 
+int main() { std::uint64_t sum{0};
+    std::uint64_t a{0}, b{1};
 
-// 	0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987
+    while(b < limit) {
+        if(b % 2 == 0)
+            sum += b;
 
-int sum = 0;
+        std::swap(a, b);
+        b += a;
+    }
 
-int main(void) {
-  uint64 back = 1, front = 1, a;
-  for(int i = 3;i <= 5000;++i) {
-    a = front;
-    front = back + front;
-    back = a;
-    if(back > 4000000)
-      break;
-    if(back % 2 == 0)
-      sum += back;
-  }
-  std::cout << sum << std::endl;
+    std::cout << sum << '\n';
 }
